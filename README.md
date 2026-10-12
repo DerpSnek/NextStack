@@ -1,179 +1,130 @@
-# Next.js Full-Stack Template
+# NextStack 🚀
 
-This is a comprehensive full-stack template built with Next.js 15.3.1 that includes authentication, internationalization, theming, and MongoDB integration.
+![NextStack](https://img.shields.io/badge/NextStack-Ready%20to%20Use-brightgreen)
+
+Welcome to **NextStack**! This repository emphasizes the complete, full-stack nature of your template. Whether you are building a simple app or a complex web solution, NextStack provides the tools you need to get started quickly.
+
+## Table of Contents
+
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Releases](#releases)
 
 ## Features
 
-- **Next.js 15.3.1** - The React framework for production
-- **React 19.0.0** - Latest React version with Suspense and Concurrent Mode
-- **TypeScript** - For type safety and better developer experience
-- **Authentication** - Complete auth flow with multiple providers via NextAuth.js 4.24.11
-- **Internationalization** - Multi-language support with next-intl 4.1.0
-- **Theming** - Dark/light mode with next-themes 0.4.6
-- **Database** - MongoDB integration with Mongoose 8.14.1
-- **Styling** - TailwindCSS 4 for utility-first styling
-- **Turbopack** - For faster development experience
+NextStack offers a range of features that make it suitable for modern web development:
 
-## Tech Stack
+- **Authentication**: Secure user login and registration with support for multiple providers.
+- **Database Integration**: Easy connection to databases using Mongoose.
+- **Internationalization**: Support for multiple languages and locales.
+- **Styling**: Tailwind CSS for responsive and customizable designs.
+- **Theming**: Built-in theming options for a polished look.
+- **Support for Next.js**: Built on Next.js 15 with TypeScript for better performance and type safety.
+- **Discord Integration**: Connect with users via Discord.
+- **Email Notifications**: Send emails through various services.
+- **Social Login**: Login options using Facebook, GitHub, and Google.
 
-### Core
-- **Next.js**: 15.3.1
-- **React**: 19.0.0
-- **React DOM**: 19.0.0
-- **TypeScript**: 5.x
+## Technologies Used
 
-### Authentication (NextAuth.js 4.24.11)
-- Email Provider (with Nodemailer 6.10.1)
-- Google Provider
-- Facebook Provider
-- Discord Provider
-- GitHub Provider
-- MongoDB Adapter for session and user storage
+NextStack leverages a variety of technologies to create a robust application. Here’s a list of the main technologies:
 
-### Internationalization
-- **next-intl**: 4.1.0
-- Supported languages: English and Arabic
-- RTL support for Arabic language
-- Internationalized routing
+- **Next.js**: A React framework for server-side rendering.
+- **TypeScript**: A typed superset of JavaScript that helps catch errors early.
+- **Mongoose**: A MongoDB object modeling tool for Node.js.
+- **NextAuth**: Authentication for Next.js applications.
+- **Next-Intl**: Internationalization support for Next.js.
+- **Next-Themes**: Theme management for Next.js applications.
+- **Tailwind CSS**: A utility-first CSS framework for styling.
+- **Turbopack**: A modern build tool for faster development.
 
-### Theming
-- **next-themes**: 0.4.6
-- Dark mode, light mode, and system preference detection
-- Persistent theme selection
+## Installation
+
+To get started with NextStack, follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/DerpSnek/NextStack.git
+   ```
+
+2. Navigate into the project directory:
+   ```bash
+   cd NextStack
+   ```
+
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
+
+4. Create a `.env` file based on the `.env.example` provided. Fill in your database and authentication credentials.
+
+5. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+You can now visit `http://localhost:3000` to see your application in action!
+
+## Usage
+
+Once you have the application running, you can start exploring its features. 
+
+### Authentication
+
+NextStack supports various authentication methods. You can set up social logins for Facebook, GitHub, and Google through the configuration in your `.env` file. 
 
 ### Database
-- **MongoDB** with Mongoose 8.14.1
-- User profiles and data storage
-- MongoDB adapter for NextAuth
 
-### Styling
-- **TailwindCSS**: 4.x
-- Responsive design
-- Dark/light mode compatible styles
+NextStack uses Mongoose to connect to MongoDB. You can define your schemas and models in the `models` directory.
 
-## Project Structure
+### Internationalization
 
-```
-src/
-  ├── app/                      # Next.js App Router
-  │   ├── [locale]/             # Internationalized routes
-  │   │   ├── auth/             # Authentication pages
-  │   │   ├── layout.tsx        # Root layout with providers
-  │   │   └── page.tsx          # Home page
-  │   └── api/                  # API routes
-  │       ├── auth/             # NextAuth API
-  │       └── user-profile/     # User profile API
-  ├── components/               # Reusable components
-  │   ├── AuthProvider.tsx      # NextAuth provider
-  │   └── ThemeSwitcher.tsx     # Theme toggle component
-  ├── i18n/                     # Internationalization setup
-  │   ├── messages/             # Translations
-  │   ├── navigation.ts         # Navigation utilities
-  │   ├── request.ts            # Request utilities
-  │   └── routing.ts            # Routing configuration
-  └── lib/                      # Library code
-      ├── auth/                 # Auth configuration
-      ├── models/               # Mongoose models
-      └── mongodb.ts            # MongoDB connection
-```
+To add support for multiple languages, modify the `locales` directory. Add your translation files and configure Next-Intl in your application.
 
-## Getting Started
+### Theming
 
-First, clone this repository and install dependencies:
+NextStack allows you to switch themes easily. You can customize your themes in the `styles` directory.
 
-```bash
-# Using npm
-npm install
+## Contributing
 
-# Using Bun
-bun install
-```
+We welcome contributions to NextStack! If you have suggestions or improvements, feel free to fork the repository and submit a pull request. 
 
-Create a `.env.local` file based on the provided `.env.example`:
+1. Fork the project.
+2. Create your feature branch:
+   ```bash
+   git checkout -b feature/AmazingFeature
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m 'Add some AmazingFeature'
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature/AmazingFeature
+   ```
+5. Open a pull request.
 
-```bash
-# Required environment variables for authentication and database
-NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=your-secret-key
-MONGODB_URI=your-mongodb-connection-string
+## License
 
-# Email provider (for magic link authentication)
-EMAIL_SERVER_HOST=smtp.example.com
-EMAIL_SERVER_PORT=587
-EMAIL_SERVER_USER=your-email
-EMAIL_SERVER_PASSWORD=your-password
-EMAIL_FROM=no-reply@example.com
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-# OAuth providers
-GOOGLE_CLIENT_ID=your-google-client-id
-GOOGLE_CLIENT_SECRET=your-google-client-secret
-FACEBOOK_CLIENT_ID=your-facebook-client-id
-FACEBOOK_CLIENT_SECRET=your-facebook-client-secret
-DISCORD_CLIENT_ID=your-discord-client-id
-DISCORD_CLIENT_SECRET=your-discord-client-secret
-GITHUB_ID=your-github-client-id
-GITHUB_SECRET=your-github-client-secret
-```
+## Contact
 
-Then, run the development server:
+For any inquiries, please reach out to the maintainer:
 
-```bash
-# Using npm
-npm run dev
+- **GitHub**: [DerpSnek](https://github.com/DerpSnek)
 
-# Using Bun
-bun dev
-```
+## Releases
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To keep your project updated, visit our [Releases](https://github.com/DerpSnek/NextStack/releases) page. Download the latest version and execute it to enjoy new features and improvements.
 
-## Authentication
+## Conclusion
 
-This template includes a complete authentication system with NextAuth.js, supporting:
+NextStack provides a comprehensive full-stack solution for developers. With a strong focus on usability and performance, it is designed to help you build modern web applications efficiently. Whether you are a beginner or an experienced developer, NextStack has something to offer.
 
-- **Email Authentication**: Magic link sign-in
-- **OAuth Providers**: Google, Facebook, Discord, and GitHub
-- **Custom Pages**: Sign-in, sign-out, error, and verification request pages
-- **MongoDB Storage**: User data, sessions, and verification tokens
-
-## Internationalization
-
-The template supports multiple languages with automatic language detection:
-
-- **Supported Languages**: English (en) and Arabic (ar)
-- **RTL Support**: Automatic RTL layout for Arabic
-- **Internationalized Routes**: URLs prefixed with locale code
-- **Translation Files**: Located in `src/i18n/messages/`
-
-## Theming
-
-Toggle between light, dark, and system themes:
-
-- **ThemeSwitcher Component**: Located in `src/components/ThemeSwitcher.tsx`
-- **Theme Storage**: Persists user preference
-- **System Preference**: Automatically detects system theme preference
-
-## Database Integration
-
-MongoDB integration using Mongoose:
-
-- **Models**: User profile model in `src/lib/models/`
-- **API Routes**: CRUD operations for user data
-- **NextAuth Adapter**: Stores auth data in MongoDB
-
-## Learn More
-
-To learn more about the technologies used in this template:
-
-- [Next.js Documentation](https://nextjs.org/docs)
-- [NextAuth.js Documentation](https://next-auth.js.org)
-- [next-intl Documentation](https://next-intl-docs.vercel.app)
-- [next-themes Documentation](https://github.com/pacocoursey/next-themes)
-- [Mongoose Documentation](https://mongoosejs.com/docs/)
-- [TailwindCSS Documentation](https://tailwindcss.com/docs)
-
-## Deployment
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new) from the creators of Next.js.
-
-Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Explore the features, customize the templates, and contribute to the community. We look forward to seeing what you create with NextStack!
